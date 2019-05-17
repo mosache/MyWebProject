@@ -12,6 +12,16 @@ public class User {
 
     private Date create_time;
 
+    private String timeStr;
+
+    public String getTimeStr() {
+        return timeStr;
+    }
+
+    public void setTimeStr(String timeStr) {
+        this.timeStr = timeStr;
+    }
+
     public Integer getId() {
         return id;
     }
