@@ -4,9 +4,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ResponseEntry<T>{
 
-    private int State;
+    private int State = 2;
 
-    private String Msg;
+    private String Msg = "";
 
     private T data;
 
@@ -38,5 +38,11 @@ public class ResponseEntry<T>{
 
     public ResponseEntry() {
         super();
+    }
+
+    public ResponseEntry(int state, String msg, T data) {
+        State = state;
+        Msg = msg;
+        this.data = data;
     }
 }

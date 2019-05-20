@@ -1,5 +1,8 @@
 package com.yd.web.beans;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.Date;
 
 public class User {
@@ -8,11 +11,24 @@ public class User {
 
     private String username;
 
+    @JsonIgnore
     private String password;
 
+    @JsonIgnore
     private Date create_time;
 
+    @JsonIgnore
     private String timeStr;
+
+    private String token;
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
 
     public String getTimeStr() {
         return timeStr;
