@@ -14,6 +14,9 @@ public class TokenInterceptor implements HandlerInterceptor{
     @Autowired
     TokenUtils tokenUtils;
 
+    @Autowired
+    ObjectMapper objectMapper;
+
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception{
 
@@ -25,13 +28,10 @@ public class TokenInterceptor implements HandlerInterceptor{
             resp.setMsg("token is NULL!");
             response.setStatus(503);
             response.setContentType("application/json;charset=utf-8");
-            response.getWriter().write(new ObjectMapper().writeValueAsString(resp));
+            response.getWriter().write(objectMapper.writeValueAsString(resp));
         }else {
-            tokenUtils.isValidToken(token,null);
-            return true;
+            return tokenUtils.isValidToken(token,null);
         }
         return false;
     }
-
-
 }
