@@ -28,7 +28,7 @@ public class WebConfig extends WebMvcAutoConfiguration {
             @Override
             public void addInterceptors(InterceptorRegistry registry) {
                 registry.addInterceptor(tokenInterceptor()).addPathPatterns("/**")
-                        .excludePathPatterns("/loginIn");
+                        .excludePathPatterns("/loginIn","/error");
             }
         };
     }

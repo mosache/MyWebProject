@@ -26,7 +26,7 @@ public class TokenInterceptor implements HandlerInterceptor{
             ResponseEntry resp = new ResponseEntry();
             resp.setState(0);
             resp.setMsg("token is NULL!");
-            response.setStatus(503);
+            response.setStatus(5003);
             response.setContentType("application/json;charset=utf-8");
             response.getWriter().write(objectMapper.writeValueAsString(resp));
         }else {

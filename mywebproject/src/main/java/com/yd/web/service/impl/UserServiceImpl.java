@@ -1,6 +1,5 @@
 package com.yd.web.service.impl;
 
-import com.yd.web.beans.ResponseEntry;
 import com.yd.web.beans.User;
 import com.yd.web.mappers.UserMapper;
 import com.yd.web.service.UserService;
